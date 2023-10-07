@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 //this is abstract component class . 
+//updated in master 
 public class AbstractComponent {
 	
 	WebDriver driver ;
