@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //this is abstract component class . 
 //updated in master 
 //updated in cloned version 
+
 public class AbstractComponent {
 	
 	WebDriver driver ;
