@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import rahulshettyacademy.pageobjects.CartPage;
+
 
 //this is abstract component class . 
 
@@ -32,20 +34,23 @@ public class AbstractComponent {
 	{
 		
 	WebDriverWait wait = new WebDriverWait(driver ,Duration.ofSeconds(5));
-	wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
+	wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(findBy));
 	
 	}
 	
-	public void waitForElementToDisapper(WebElement ele)
+	public void waitForElementToDisapper(WebElement ele) throws InterruptedException
 	{
+		//Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver ,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.invisibilityOf(ele));
 
 	}
 	
-	public void goToCartPage()
+	public CartPage goToCartPage()
 	{
 		cartHeader.click();
+		CartPage cartPage= new CartPage(driver);
+		return cartPage;
 	}
 	
 }

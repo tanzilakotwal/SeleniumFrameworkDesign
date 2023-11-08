@@ -52,7 +52,7 @@ public class ProductCatalogue extends AbstractComponent{
 	}
 	
 	//add to cart 
-	public void addProductToCart(String productName)
+	public void addProductToCart(String productName) throws InterruptedException
 	{
 		System.out.println("product name is --> " + productName);
 		
@@ -63,6 +63,8 @@ public class ProductCatalogue extends AbstractComponent{
 
 		waitforElementToAppear(toastMessage);
 		waitForElementToDisapper(spinner);
+		
+		
 		
 		
 

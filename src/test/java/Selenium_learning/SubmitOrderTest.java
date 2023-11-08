@@ -14,12 +14,14 @@ import org.testng.Assert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import rahulshettyacademy.pageobjects.CartPage;
+import rahulshettyacademy.pageobjects.CheckoutPage;
+import rahulshettyacademy.pageobjects.ConfirmationPage;
 import rahulshettyacademy.pageobjects.LandingPage;
 import rahulshettyacademy.pageobjects.ProductCatalogue;
 
 public class SubmitOrderTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		
@@ -38,10 +40,10 @@ public class SubmitOrderTest {
 		
 		LandingPage landingPage=new LandingPage(driver);
 		landingPage.goTo();
-		landingPage.loginApplication("tanzila@gmail.com", "Golu62**");
+		ProductCatalogue productCatalogue=landingPage.loginApplication("tanzila@gmail.com", "Golu62**");
 		
 		
-		ProductCatalogue productCatalogue= new ProductCatalogue(driver);
+		//ProductCatalogue productCatalogue= new ProductCatalogue(driver);
 		List<WebElement> products = productCatalogue.getProductList();
 		
 		
@@ -50,35 +52,31 @@ public class SubmitOrderTest {
 		
 		productCatalogue.addProductToCart(productName);
 		
-		productCatalogue.goToCartPage();
-
-		System.out.println("product added: ");
 		
+
 		
 		//check product in cart 
-		CartPage cartPage= new CartPage(driver);
+		CartPage cartPage=productCatalogue.goToCartPage();
 		Boolean match=cartPage.verifyProductDisplay(productName);
 		Assert.assertTrue(match);
 		
+		System.out.println("product matched ---------");
+		
 		//click checkout 
-		cartPage.goToCheckout();
+		CheckoutPage checkoutPage=cartPage.goToCheckout();
+		checkoutPage.selectCountry("India");
+		
+		System.out.println("india selected : ");
+		ConfirmationPage confirmationPage=checkoutPage.submitOrder();
 		
 		
 		
 		
-		Actions a = new Actions(driver);
 		
-		a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "india").build().perform();
 		
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".ta-results")));
-		
-		driver.findElement(By.cssSelector(".ta-item:nth-of-type(2)")).click();
-		driver.findElement(By.cssSelector(".action__submit")).click();
-		
-		String Confirm_msg=driver.findElement(By.cssSelector(".hero-primary")).getText();
-		System.out.println(Confirm_msg);
-		
-		Assert.assertTrue(Confirm_msg.equalsIgnoreCase(Confirm_msg));
+		String confirmMessage=confirmationPage.getConfirmationMessage();
+			
+		Assert.assertTrue(confirmMessage.equalsIgnoreCase(confirmMessage));
 	}
 
 }
