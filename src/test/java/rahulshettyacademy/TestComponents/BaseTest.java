@@ -11,16 +11,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import rahulshettyacademy.pageobjects.LandingPage;
 
 public class BaseTest {
 
 	WebDriver driver;
 	
-	public void initializeDriver() throws IOException
+	public WebDriver initializeDriver() throws IOException
 	{
 		
 		Properties prop =new Properties();
-		FileInputStream fis=new FileInputStream("C:\\Users\\Tanzila Kotwal\\eclipse-workspace\\SeleniumFrameworkDesign_practiseECommerce\\src\\main\\java\\rahulshettyacademy\\resources\\GlobalData.properties");
+		FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\rahulshettyacademy\\resources\\GlobalData.properties");
 		prop.load(fis);
 		String browserName=prop.getProperty("browser");
 		
@@ -38,8 +39,15 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 		driver.manage().window().maximize();
+		return driver;
 		
 	}
 	
-	
+	public LandingPage LaunchApplication() throws IOException
+	{
+		driver=initializeDriver();
+		LandingPage landingPage=new LandingPage(driver);
+		landingPage.goTo();
+		return landingPage;
+	}
 }

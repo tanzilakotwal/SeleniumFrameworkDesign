@@ -1,5 +1,6 @@
 package rahulashettyacademy.Tests;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -11,35 +12,31 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import rahulshettyacademy.TestComponents.BaseTest;
 import rahulshettyacademy.pageobjects.CartPage;
 import rahulshettyacademy.pageobjects.CheckoutPage;
 import rahulshettyacademy.pageobjects.ConfirmationPage;
 import rahulshettyacademy.pageobjects.LandingPage;
 import rahulshettyacademy.pageobjects.ProductCatalogue;
 
-public class SubmitOrderTest {
+public class SubmitOrderTest extends BaseTest {
 
-	public static void main(String[] args) throws InterruptedException {
+	
+	
+	@Test
+	public  void submitOrder() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		
 		
 		String productName="ZARA COAT 3";
 		
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver=new ChromeDriver();
-		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
-		
-		System.out.println("starting script :");
-		driver.manage().window().maximize();
+		LandingPage landingPage=LaunchApplication();
+		//WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		
 		
-		
-		LandingPage landingPage=new LandingPage(driver);
-		landingPage.goTo();
 		ProductCatalogue productCatalogue=landingPage.loginApplication("tanzila@gmail.com", "Golu62**");
 		
 		
