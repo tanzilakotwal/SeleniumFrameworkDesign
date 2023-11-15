@@ -1,4 +1,4 @@
-package Selenium_learning;
+package rahulashettyacademy.Tests;
 
 import java.time.Duration;
 import java.util.List;
