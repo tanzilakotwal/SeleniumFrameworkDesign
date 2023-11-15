@@ -33,10 +33,6 @@ public class SubmitOrderTest extends BaseTest {
 		
 		String productName="ZARA COAT 3";
 		
-		LandingPage landingPage=LaunchApplication();
-		//WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
-		
-		
 		ProductCatalogue productCatalogue=landingPage.loginApplication("tanzila@gmail.com", "Golu62**");
 		
 		
