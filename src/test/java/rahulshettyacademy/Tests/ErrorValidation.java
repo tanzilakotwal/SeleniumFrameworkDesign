@@ -1,20 +1,12 @@
-package rahulashettyacademy.Tests;
+package rahulshettyacademy.Tests;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import rahulshettyacademy.TestComponents.BaseTest;
 import rahulshettyacademy.pageobjects.CartPage;
 import rahulshettyacademy.pageobjects.CheckoutPage;
@@ -22,12 +14,22 @@ import rahulshettyacademy.pageobjects.ConfirmationPage;
 import rahulshettyacademy.pageobjects.LandingPage;
 import rahulshettyacademy.pageobjects.ProductCatalogue;
 
-public class SubmitOrderTest extends BaseTest {
 
+@Test
+public class ErrorValidation extends BaseTest {
+
+	public void LoginErrorValidation()
+	{
+		landingPage.loginApplication("tanzila@gmail.com", "Golu62*");
+		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
+
+	}
+	
+	
 	
 	
 	@Test
-	public  void submitOrder() throws IOException, InterruptedException {
+	public  void ProductErrorValidation() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		
 		
@@ -50,26 +52,15 @@ public class SubmitOrderTest extends BaseTest {
 		
 		//check product in cart 
 		CartPage cartPage=productCatalogue.goToCartPage();
-		Boolean match=cartPage.verifyProductDisplay(productName);
+		Boolean match=cartPage.verifyProductDisplay("ZARA COAT 33");
 		Assert.assertTrue(match);
 		
 		System.out.println("product matched ---------");
 		
-		//click checkout 
-		CheckoutPage checkoutPage=cartPage.goToCheckout();
-		checkoutPage.selectCountry("India");
 		
-		System.out.println("india selected : ");
-		ConfirmationPage confirmationPage=checkoutPage.submitOrder();
-		
-		
-		
-		
-		
-		
-		String confirmMessage=confirmationPage.getConfirmationMessage();
-			
-		Assert.assertTrue(confirmMessage.equalsIgnoreCase(confirmMessage));
 	}
 
+	
+	
+	
 }

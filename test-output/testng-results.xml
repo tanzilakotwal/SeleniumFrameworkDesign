@@ -1,25 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-15T23:56:56 IST" name="Default suite" finished-at="2023-11-15T23:56:59 IST" duration-ms="3648">
+  <suite started-at="2023-11-16T00:19:05 IST" name="Suite" finished-at="2023-11-16T00:19:43 IST" duration-ms="37969">
     <groups>
     </groups>
-    <test started-at="2023-11-15T23:56:56 IST" name="Default test" finished-at="2023-11-15T23:56:59 IST" duration-ms="3648">
-      <class name="rahulashettyacademy.Tests.ErrorValidation">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:rahulashettyacademy.Tests.ErrorValidation@750e2b97]" started-at="2023-11-15T23:56:56 IST" name="LaunchApplication" finished-at="2023-11-15T23:56:59 IST" duration-ms="3073" status="PASS">
+    <test started-at="2023-11-16T00:19:05 IST" name="Submit order test" finished-at="2023-11-16T00:19:25 IST" duration-ms="20131">
+      <class name="rahulshettyacademy.Tests.SubmitOrderTest">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:rahulshettyacademy.Tests.SubmitOrderTest@3646a422]" started-at="2023-11-16T00:19:05 IST" name="LaunchApplication" finished-at="2023-11-16T00:19:10 IST" duration-ms="5368" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="errorValidation()[pri:0, instance:rahulashettyacademy.Tests.ErrorValidation@750e2b97]" started-at="2023-11-15T23:56:59 IST" name="errorValidation" finished-at="2023-11-15T23:56:59 IST" duration-ms="452" status="PASS">
+        <test-method signature="submitOrder()[pri:0, instance:rahulshettyacademy.Tests.SubmitOrderTest@3646a422]" started-at="2023-11-16T00:19:10 IST" name="submitOrder" finished-at="2023-11-16T00:19:25 IST" duration-ms="14507" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- errorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:rahulashettyacademy.Tests.ErrorValidation@750e2b97]" started-at="2023-11-15T23:56:59 IST" name="tearDown" finished-at="2023-11-15T23:56:59 IST" duration-ms="81" status="PASS">
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:rahulshettyacademy.Tests.SubmitOrderTest@3646a422]" started-at="2023-11-16T00:19:25 IST" name="tearDown" finished-at="2023-11-16T00:19:25 IST" duration-ms="197" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- rahulashettyacademy.Tests.ErrorValidation -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- rahulshettyacademy.Tests.SubmitOrderTest -->
+    </test> <!-- Submit order test -->
+    <test started-at="2023-11-16T00:19:25 IST" name="Error Validation Test" finished-at="2023-11-16T00:19:43 IST" duration-ms="17793">
+      <class name="rahulshettyacademy.Tests.ErrorValidation">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:rahulshettyacademy.Tests.ErrorValidation@7ce026d3]" started-at="2023-11-16T00:19:25 IST" name="LaunchApplication" finished-at="2023-11-16T00:19:27 IST" duration-ms="1604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="LoginErrorValidation()[pri:0, instance:rahulshettyacademy.Tests.ErrorValidation@7ce026d3]" started-at="2023-11-16T00:19:27 IST" name="LoginErrorValidation" finished-at="2023-11-16T00:19:27 IST" duration-ms="546" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:rahulshettyacademy.Tests.ErrorValidation@7ce026d3]" started-at="2023-11-16T00:19:27 IST" name="tearDown" finished-at="2023-11-16T00:19:28 IST" duration-ms="103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:rahulshettyacademy.Tests.ErrorValidation@7ce026d3]" started-at="2023-11-16T00:19:28 IST" name="LaunchApplication" finished-at="2023-11-16T00:19:29 IST" duration-ms="1710" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="ProductErrorValidation()[pri:0, instance:rahulshettyacademy.Tests.ErrorValidation@7ce026d3]" started-at="2023-11-16T00:19:29 IST" name="ProductErrorValidation" finished-at="2023-11-16T00:19:43 IST" duration-ms="13667" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at rahulshettyacademy.Tests.ErrorValidation.ProductErrorValidation(ErrorValidation.java:56)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:rahulshettyacademy.Tests.ErrorValidation@7ce026d3]" started-at="2023-11-16T00:19:43 IST" name="tearDown" finished-at="2023-11-16T00:19:43 IST" duration-ms="153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- rahulshettyacademy.Tests.ErrorValidation -->
+    </test> <!-- Error Validation Test -->
+  </suite> <!-- Suite -->
 </testng-results>
