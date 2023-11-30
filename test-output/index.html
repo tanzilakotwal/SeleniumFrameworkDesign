@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="rahulshettyacademy.Tests.ErrorValidation" class="method navigator-link" hash-for-method="ProductErrorValidation">ProductErrorValidation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,6 +104,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="rahulshettyacademy.Tests.ErrorValidation" class="method navigator-link" hash-for-method="LoginErrorValidation">LoginErrorValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="rahulshettyacademy.Tests.ErrorValidation" class="method navigator-link" hash-for-method="ProductErrorValidation">ProductErrorValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="rahulshettyacademy.Tests.SubmitOrderTest" class="method navigator-link" hash-for-method="orderHistoryTest">orderHistoryTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -137,26 +133,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">rahulshettyacademy.Tests.ErrorValidation</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="ProductErrorValidation">
-                  </a> <!-- ProductErrorValidation -->
-                  <span class="method-name">ProductErrorValidation</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at rahulshettyacademy.Tests.ErrorValidation.ProductErrorValidation(ErrorValidation.java:56)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -170,6 +146,13 @@
                   <span class="method-name">LoginErrorValidation</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ProductErrorValidation">
+                  </a> <!-- ProductErrorValidation -->
+                  <span class="method-name">ProductErrorValidation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
@@ -178,6 +161,13 @@
               <span class="class-name">rahulshettyacademy.Tests.SubmitOrderTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="orderHistoryTest">
+                  </a> <!-- orderHistoryTest -->
+                  <span class="method-name">orderHistoryTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="submitOrder">
@@ -247,19 +237,23 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'submitOrder')
 data.setCell(0, 2, 'rahulshettyacademy.Tests.SubmitOrderTest')
-data.setCell(0, 3, 14507);
+data.setCell(0, 3, 14048);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'ProductErrorValidation')
 data.setCell(1, 2, 'rahulshettyacademy.Tests.ErrorValidation')
-data.setCell(1, 3, 13667);
+data.setCell(1, 3, 13327);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'LoginErrorValidation')
-data.setCell(2, 2, 'rahulshettyacademy.Tests.ErrorValidation')
-data.setCell(2, 3, 546);
+data.setCell(2, 1, 'orderHistoryTest')
+data.setCell(2, 2, 'rahulshettyacademy.Tests.SubmitOrderTest')
+data.setCell(2, 3, 486);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'LoginErrorValidation')
+data.setCell(3, 2, 'rahulshettyacademy.Tests.ErrorValidation')
+data.setCell(3, 3, 404);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -297,40 +291,50 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">submitOrder</span>
-                <span class="method-start">5371 ms</span>
+                <span class="method-start">2675 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">19887 ms</span>
+                <span class="method-start">16727 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">LaunchApplication</span>
+                <span class="method-start">16812 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">orderHistoryTest</span>
+                <span class="method-start">18883 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">19370 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">rahulshettyacademy.Tests.ErrorValidation</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">LaunchApplication</span>
-                <span class="method-start">20143 ms</span>
+                <span class="method-start">19455 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">LoginErrorValidation</span>
-                <span class="method-start">21747 ms</span>
+                <span class="method-start">20635 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">22297 ms</span>
+                <span class="method-start">21041 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">LaunchApplication</span>
-                <span class="method-start">22400 ms</span>
+                <span class="method-start">21159 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">ProductErrorValidation</span>
-                <span class="method-start">24110 ms</span>
+                <span class="method-start">24713 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">37777 ms</span>
+                <span class="method-start">38041 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

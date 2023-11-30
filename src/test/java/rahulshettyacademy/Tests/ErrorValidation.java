@@ -20,8 +20,11 @@ public class ErrorValidation extends BaseTest {
 
 	public void LoginErrorValidation()
 	{
+		System.out.println("login test started ----------");
 		landingPage.loginApplication("tanzila@gmail.com", "Golu62*");
 		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
+		
+		System.out.println("login test completed ----------");
 
 	}
 	
@@ -32,7 +35,7 @@ public class ErrorValidation extends BaseTest {
 	public  void ProductErrorValidation() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		
-		
+		System.out.println("ProductValidation test started ----------");
 		String productName="ZARA COAT 3";
 		
 		ProductCatalogue productCatalogue=landingPage.loginApplication("tanzila@gmail.com", "Golu62**");
@@ -52,10 +55,11 @@ public class ErrorValidation extends BaseTest {
 		
 		//check product in cart 
 		CartPage cartPage=productCatalogue.goToCartPage();
-		Boolean match=cartPage.verifyProductDisplay("ZARA COAT 33");
+		Boolean match=cartPage.verifyProductDisplay("ZARA COAT 3");
 		Assert.assertTrue(match);
 		
 		System.out.println("product matched ---------");
+		System.out.println("ProductValidation test completed ----------");
 		
 		
 	}

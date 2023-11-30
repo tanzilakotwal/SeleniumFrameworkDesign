@@ -20,18 +20,19 @@ import rahulshettyacademy.pageobjects.CartPage;
 import rahulshettyacademy.pageobjects.CheckoutPage;
 import rahulshettyacademy.pageobjects.ConfirmationPage;
 import rahulshettyacademy.pageobjects.LandingPage;
+import rahulshettyacademy.pageobjects.OrderPage;
 import rahulshettyacademy.pageobjects.ProductCatalogue;
 
 public class SubmitOrderTest extends BaseTest {
 
-	
+	String productName="ZARA COAT 3";
 	
 	@Test
 	public  void submitOrder() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		
+		System.out.println("SubmitOrder test started ----------");
 		
-		String productName="ZARA COAT 3";
 		
 		ProductCatalogue productCatalogue=landingPage.loginApplication("tanzila@gmail.com", "Golu62**");
 		
@@ -70,6 +71,18 @@ public class SubmitOrderTest extends BaseTest {
 		String confirmMessage=confirmationPage.getConfirmationMessage();
 			
 		Assert.assertTrue(confirmMessage.equalsIgnoreCase(confirmMessage));
+		
+		System.out.println("SubMitorder  test Completed ----------");
 	}
 
+	
+	
+	@Test(dependsOnMethods= {"submitOrder"})
+	public void orderHistoryTest()
+	{
+		
+		ProductCatalogue productCatalogue=landingPage.loginApplication("tanzila@gmail.com", "Golu62**");
+		OrderPage ordersPage=productCatalogue.goToOrdersPage();
+		Assert.assertTrue(ordersPage.verifyOrderDisplay(productName));
+	}
 }
